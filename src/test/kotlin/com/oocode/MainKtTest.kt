@@ -10,6 +10,7 @@ import org.http4k.client.JavaHttpClient
 import org.http4k.core.Response
 import org.http4k.core.Status
 import org.junit.jupiter.api.Test
+import kotlin.test.assertNotEquals
 import kotlin.test.assertNotNull
 
 internal class WeatherDataIntegrationTest {
@@ -35,3 +36,7 @@ internal class WeatherDataIntegrationTest {
 
     }
 }
+
+
+
+
