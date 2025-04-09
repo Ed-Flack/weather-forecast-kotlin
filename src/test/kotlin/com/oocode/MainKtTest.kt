@@ -12,7 +12,7 @@ import kotlin.test.assertNotNull
 internal class WeatherDataIntegrationTest {
     @Test
     fun `can parse known response`() {
-        val response = AcmeForecastClient().acmeForecast("Monday", "Oxford")
+        val response = AcmeForecastClient(JavaHttpClient()).acmeForecast("Monday", "Oxford")
         assertNotNull(response.description)
         assertNotNull(response.max)
         assertNotNull(response.min)
