@@ -16,6 +16,7 @@ fun acmeForecast(httpClient: HttpHandler, day: String, place: String): AcmeForec
         Request(Method.GET, "https://pqjbv9i19c.execute-api.eu-west-2.amazonaws.com/api/forecast?place=$place&day=$day")
     ).let { response ->
         if (response.status.successful) {
+            println(response)
             println(AcmeForecastingClientResult.lens(response))
             AcmeForecastingClientResult.lens(response)
         } else {
