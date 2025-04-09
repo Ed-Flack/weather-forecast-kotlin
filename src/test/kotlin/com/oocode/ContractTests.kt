@@ -5,7 +5,6 @@ import org.http4k.client.JavaHttpClient
 import org.http4k.core.*
 import org.http4k.filter.ClientFilters
 import org.http4k.routing.bind
-import org.http4k.routing.path
 import org.http4k.routing.routes
 import org.junit.jupiter.api.Test
 import kotlin.test.assertNotNull

@@ -3,14 +3,10 @@ package com.oocode
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.equalTo
 import com.teamoptimization.AcmeForecastClient
-import com.teamoptimization.AcmeForecastingClientResult
-import com.teamoptimization.acmeForecast
-import moo
 import org.http4k.client.JavaHttpClient
 import org.http4k.core.Response
 import org.http4k.core.Status
 import org.junit.jupiter.api.Test
-import kotlin.test.assertNotEquals
 import kotlin.test.assertNotNull
 
 internal class WeatherDataIntegrationTest {
