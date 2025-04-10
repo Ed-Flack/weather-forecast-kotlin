@@ -1,17 +1,22 @@
-import com.teamoptimization.acmeForecast
+import com.teamoptimization.AcmeForecastClient
+import com.teamoptimization.BaseClient
+import com.teamoptimization.CacheForecaster
 import org.http4k.client.JavaHttpClient
+import org.http4k.core.Uri
+import org.http4k.filter.ClientFilters
 
 fun main(args: Array<String>) {
     if (args.size != 2) {
         throw RuntimeException("Must specify Day and Place")
     }
-    printForecast(args[0], args[1])
-    printForecast(args[0], args[1])
-    printForecast(args[0], args[1])
+    val acmeForecastClient = CacheForecaster(AcmeForecastClient(ClientFilters.SetBaseUriFrom(Uri.of("https://pqjbv9i19c.execute-api.eu-west-2.amazonaws.com"))(JavaHttpClient())))
+    printForecast(args[0], args[1], acmeForecastClient)
+    printForecast(args[0], args[1], acmeForecastClient)
+    printForecast(args[0], args[1], acmeForecastClient)
 }
 
-private fun printForecast(day: String, place: String) {
-    val acmeForecast = acmeForecast(JavaHttpClient(), day, place)
+private fun printForecast(day: String, place: String, acmeForecastClient: BaseClient) {
+    val acmeForecast = acmeForecastClient.acmeForecast(day, place)
 
     val emoji =
         if (acmeForecast.min.toInt() < 5) {
