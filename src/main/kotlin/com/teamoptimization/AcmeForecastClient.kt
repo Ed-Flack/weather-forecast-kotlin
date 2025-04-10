@@ -10,8 +10,6 @@ class AcmeForecastClient(private val handler: HttpHandler) : BaseClient {
             Request(Method.GET, "/api/forecast?place=$place&day=$day")
         ).let { response ->
             if (response.status.successful) {
-                println(response)
-                println(AcmeForecastingClientResult.lens(response))
                 AcmeForecastingClientResult.lens(response)
             } else {
                 throw RuntimeException(response.toMessage())
